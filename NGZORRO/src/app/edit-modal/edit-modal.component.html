@@ -1,0 +1,47 @@
+<nz-modal [(nzVisible)]='isVisible' nzTitle='新增人员' nzOkText="确认" nzCancelText="取消" (nzOnCancel)="handleCancel()"
+    (nzOnOk)="handleOk()">
+    <form nz-form [formGroup]="validataForm" (ngSubmit)="submitForm()">
+        <nz-form-item>
+            <nz-form-label nzFor="name" nzSpan="1-24" nzRequired [nzXs]="1-24" [nzSm]="1-24" [nzMd]="1-24" [nzLg]="1-24"
+                [nzXl]="1-24" [nzXXl]="1-24">
+                <span>姓名</span>
+            </nz-form-label>
+            <nz-form-control nzSpan="1-24" [nzXs]="1-24" [nzSm]="1-24" [nzMd]="1-24" [nzLg]="1-24" [nzXl]="1-24"
+                [nzXXl]="1-24">
+                <input type="text" nz-input id="name" formControlName="name">
+                <nz-form-explain
+                    *ngIf="(validataForm.get('name').dirty || validataForm.get('name').touched) && validataForm.get('name').errors?.required">
+                    请输入姓名！
+                </nz-form-explain>
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+            <nz-form-label nzRequired nzFor="age" nzSpan="1-24" nzRequired [nzXs]="1-24" [nzSm]="1-24" [nzMd]="1-24"
+                [nzLg]="1-24" [nzXl]="1-24" [nzXXl]="1-24">
+                <span>年龄</span>
+            </nz-form-label>
+            <nz-form-control nzSpan="1-24" [nzXs]="1-24" [nzSm]="1-24" [nzMd]="1-24" [nzLg]="1-24" [nzXl]="1-24"
+                [nzXXl]="1-24">
+                <input type="text" nz-input id="age" formControlName="age">
+                <nz-form-explain
+                    *ngIf="(validataForm.get('age').dirty || validataForm.get('age').touched) && validataForm.get('age').errors?.required">
+                    请输入年龄!
+                </nz-form-explain>
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+            <nz-form-label nzRequired nzFor="address" nzSpan="1-24" nzRequired [nzXs]="1-24" [nzSm]="1-24" [nzMd]="1-24"
+                [nzLg]="1-24" [nzXl]="1-24" [nzXXl]="1-24">
+                <span>地址</span>
+            </nz-form-label>
+            <nz-form-control nzSpan="1-24" [nzXs]="1-24" [nzSm]="1-24" [nzMd]="1-24" [nzLg]="1-24" [nzXl]="1-24"
+                [nzXXl]="1-24">
+                <input type="text" nz-input id="address" formControlName="address">
+                <nz-form-explain
+                    *ngIf="(validataForm.get('address').dirty || validataForm.get('address').touched) && validataForm.get('address').errors?.required">
+                    请输入地址!
+                </nz-form-explain>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</nz-modal>

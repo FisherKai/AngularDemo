@@ -1,0 +1,42 @@
+<!-- 模块框测试 -->
+<button nz-button nzType="primary" (click)="test()">测试</button>
+<app-modal [isVisible]="modalIsVisible" title='测试标题' content='测试内容' okText='ok' cancelText='cancel'></app-modal>
+
+<!-- 城市组件测试 -->
+<nz-card style="margin: 30px;background-color: greenyellow;">
+    <nz-radio-group [(ngModel)]="radioValue" [nzButtonStyle]="'solid'">
+        <label nz-radio-button nzValue="beijing">北京</label>
+        <label nz-radio-button nzValue="shanghai">上海</label>
+        <label nz-radio-button nzValue="guangzhou">广州</label>
+
+        <div style="margin-top: 30px;">
+            <app-beijing *ngIf="radioValue=='beijing'"></app-beijing>
+            <app-shanghai *ngIf="radioValue=='shanghai'"></app-shanghai>
+            <app-guangzhou *ngIf="radioValue=='guangzhou'"></app-guangzhou>
+        </div>
+    </nz-radio-group>
+</nz-card>
+
+<!-- 依赖注入测试 -->
+<app-user-info></app-user-info>
+<br>
+<br>
+<br>
+<!-- 路由测试 -->
+<!-- 1、可以在HTML文件中使用指令routeLink="跳转路径" -->
+<!-- 2、 在TS文件中引入Route进行跳转 -->
+<!-- this.route.navigate(['跳转路径']) -->
+<button nz-button nzType="primary" [routerLink]="['/login']"
+    routerLinkActive="router-link-active">登录组件(模板驱动型表单)</button>
+<br>
+<br>
+<br>
+<button nz-button nzType="primary" (click)="routeToTestForm()"
+    routerLinkActive="router-link-active">个人信息页(响应式表单)</button>
+
+<br>
+<br>
+<br>
+<!-- 数据增删改查 -->
+<button nz-button nzType="primary" (click)="routeToTable()" routerLinkActive="router-link-active">数据操作</button>
+<router-outlet></router-outlet>

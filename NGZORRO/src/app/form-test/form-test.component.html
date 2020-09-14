@@ -1,0 +1,47 @@
+<nz-divider [nzText]="'响应式表单'"></nz-divider>
+<nz-content>
+  <form [formGroup]="validateForm">
+  
+    <nz-form-item>
+      <nz-form-label nzSpan="3" nz-col>
+        姓名
+      </nz-form-label>
+      <nz-form-control nzSpan="6" nz-col>
+        <input nz-input type="text" placeholder="请输入姓名~" formControlName="name">
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label nzSpan="3" nz-col>
+        年龄
+      </nz-form-label>
+      <nz-form-control nzSpan="6" nz-col>
+        <input nz-input type="text" placeholder="请输入年龄~" formControlName="age">
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label nzSpan="3" nz-col>
+        Email
+      </nz-form-label>
+      <nz-form-control nzSpan="6" nz-col>
+        <input nz-input type="text" placeholder="请输入Email~" formControlName="email">
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</nz-content>
+<nz-content>
+  <nz-form-item>
+    <nz-form-label nzSpan="3" nz-col>
+      展示表单的值
+    </nz-form-label>
+    <nz-form-control nzSpan="6" nz-col>
+      {{validateForm.value | json }}
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control nzOffset="3" nzSpan="6">
+      <button nz-button (click)="handleInitForm()">重置</button>
+    </nz-form-control>
+  </nz-form-item>
+</nz-content>
